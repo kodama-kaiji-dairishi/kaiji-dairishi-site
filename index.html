@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>小玉海事代理士事務所</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: #1f2933;
+  background: #f5f7fa;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  background: #0b2c44;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  letter-spacing: 0.1em;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 42px;
+}
+
+nav a {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #4fc3f7;
+  transition: width 0.3s;
+}
+
+nav a:hover {
+  color: #4fc3f7;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== ヒーロー ===== */
+.hero {
+  background:
+    linear-gradient(rgba(11,44,68,0.7), rgba(11,44,68,0.7)),
+    url("image/head.jpg") center / cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ===== 共通 ===== */
+.section {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.section h3 {
+  font-size: 28px;
+  border-left: 6px solid #0b2c44;
+  padding-left: 15px;
+  margin-bottom: 40px;
+}
+
+/* ===== 業務カード ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 10px;
+  
+}
+
+.card {  
+  background: #ffffff;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border-top: 5px solid #0b2c44;
+}
+    
+li {
+  margin-bottom: 4px;
+}
+
+/* ===== 交互レイアウト ===== */
+.row {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+.text {
+  flex: 1;
+}
+
+.photo {
+  flex: 1;
+  max-width: 450px;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ===== お問い合わせ ===== */
+.contact-box {
+  background: #0b2c44;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+/* ===== フッター ===== */
+footer {
+  background: #0b2c44;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* ===== フェードイン ===== */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== スマホ ===== */
+@media (max-width: 768px) {
+  nav {
+    gap: 20px;
+  }
+
+  .row,
+  .row.reverse {
+    flex-direction: column;
+  }
+
+  .photo {
+    height: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1 style="color:white;">小玉海事代理士事務所</h1>
+    <nav>
+      <a href="#home">ホーム</a>
+      <a href="#profile">事務所概要</a>
+      <a href="#service">業務内容</a>  
+      <a href="price.html">報酬表</a> 
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <h2>船舶と海事手続の<br>確かなパートナー</h2>
+  <p>
+    船舶登録・検査・官庁手続まで<br>
+    現場を知る海事代理士が確実に対応します
+  </p>
+</section>
+
+
+<section class="section fade" id="profile">
+  <h3>事務所概要</h3>
+<p>小玉海事代理士事務所は、船舶および海事分野に特化した各種法定手続を専門とする海事代理士事務所です。 船舶登録、検査申請、官庁提出書類の作成・代理申請など、 船舶の運航・管理に不可欠な手続きを一貫してサポートしております。</p>
+    
+    
+  <div class="row">
+    <div class="text">
+      <h2>特徴・強み</h2>
+      <p>
+  当事務所の最大の強みは、 船舶への乗船経験に加え、船舶管理業務に携わった実務経験を有しており、
+  現場・管理・法令の三点を踏まえた総合的な視点での対応を強みとしています。<br>
+  船の動静や運航計画を考慮した手続きを心掛け、
+  実務に即した現実的かつ円滑な申請を行います。
+      </p>
+    </div>
+    <img src="image/zimu.jpg" class="photo">
+  </div>
+    
+    
+
+  <div class="row .reverse">
+    <img src="image/zitumu.jpg" class="photo">
+    <div class="text">
+      <h2>実務を理解した海事代理士</h2>
+      <p>
+        船舶関係の手続きは、法令を理解しているだけでは十分とは言えません。 実際の運航状況や現場事情を理解していなければ、 申請の遅れや不要な手戻りが生じるケースも少なくありません。<br>
+        当事務所では、現場目線を重視し、 「今、何が求められているのか」 「どの手続きが最短かつ確実か」 を常に意識した対応を心掛けています。
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="text">
+      <h2>対応エリア</h2>
+      <p>
+        全国対応可能です。 オンライン・郵送による手続きにより、遠隔地からのご依頼にも柔軟に対応いたします。<br>
+        必要に応じて、現地対応・立会いについてもご相談ください。
+      </p>
+    </div>
+    <img src="image/eria.jpg" class="photo">
+  </div>
+
+  <div class="row .reverse">
+    <img src="image/kihon.jpg" class="photo">
+    <div class="text">
+      <h2>基本方針</h2>
+      <p>・法令遵守を最優先とした確実な手続き<br>
+          ・事前説明を重視した明瞭な対応<br>
+          ・迅速かつ誠実な業務遂行<br>
+
+         を基本方針とし、
+         依頼者様にとって「相談しやすく、任せやすい海事代理士」であることを目指しています。</p>
+    </div>
+  </div>
+    
+   <div class="row">
+    <div class="text">  
+    <h2>ご相談について</h2>
+      <p>業務内容や手続きの可否、費用感についても、
+事前に丁寧にご説明いたします。<br>
+まずはお気軽にお問い合わせください。</p>
+       </div>
+    <img src="image/soudan.jpg" class="photo">
+    </div>
+
+</section>
+    
+    
+ <section class="section fade" id="service">
+  <h3>業務内容</h3>
+  <div class="cards">
+    <div class="card">
+      <h4>登録関係</h4>
+       <ul class="jp-list"> 
+      
+           <li>船舶国籍証書／仮船舶国籍証書</li>
+           <li>総トン数測度申請</li>
+           <li>船舶国籍証書検認</li>
+           <li>船舶登記</li>
+           <li>船籍票交付申請</li>
+           <li>船舶原簿謄（抄）本交付</li>
+           <li>旅客定期・不定期航路事業許可</li>
+           <li>旅客定期・不定期航路事業運行開始延期申請</li>
+           <li>旅客定期・不定期航路事業運賃及び料金（運行約款）認定（変更）認可</li>
+           <li>港湾運送事業免許申請</li>
+           <li>造船施設新設（譲渡・借受）許可</li>
+           <li>入出港届</li>
+           <li>海洋汚染防止証書再交付、書換申請</li>
+           <li>海洋汚染防止検査手帳再交付申請</li>
+           <li>運送約款の作成</li>
+           <li>内航海運業許可</li>
+           <li>内航運送約款 作成･届出</li>
+           <li>安全管理規程等の作成</li>
+           <li>船員派遣事業許可</li>
+           <li>船員派遣事業許可　更新</li>
+           <li>船員就業規則 作成･届出</li>
+           <li>遊漁船登録</li>
+           <li>小型船舶　名義変更</li>
+           <li>小型船舶　変更登録</li>
+     </ul>
+      
+              
+        
+    </div>
+    <div class="card">
+      <h4>検査関係</h4>
+      
+    <ul class="jp-list">         
+    <li>定期検査</li>
+      <li>中間検査</li>
+       <li>臨時検査</li>
+      <li>臨時航行検査</li>
+      <li>検査証書再交付、書換申請</li>
+      <li>検査手帳再交付、書換申請</li>
+      <li>条約証書関係</li>
+      <li>検査証書有効期間延長</li>
+    <li>小型船舶検査　定期</li>
+    <li>小型船舶検査　中間</li>
+     <li>小型船舶検査　臨時</li> 
+        
+        </ul>
+    </div>
+      
+      
+    <div class="card">
+      <h4>船員関係</h4>
+      <ul class="jp-list">    
+        <li>海技免状申請</li>
+        <li>船員手帳交付</li>
+       <li>船員手帳再交付</li>
+        <li>船員手帳書換</li>
+        <li>船員手帳訂正</li>
+        <li>雇入・雇止契約申請</li>
+        <li>海難報告</li>
+        <li>小型船舶免許更新</li>
+        <li>小型船舶免許失効再交付申請</li>
+        <li>小型船舶免許紛失再交付、訂正</li>
+        <li>特定操縦免許申請</li>
+          
+        
+        
+        
+         </ul>
+    </div>
+  </div>
+</section>
+   
+    
+    
+    
+    
+
+<section class="contact-box fade" id="contact">
+  <h3>お問い合わせ</h3>
+  <p>
+    メール：kodama-yuichi@outlook.com<br>
+    電話：090-2081-0267<br>
+    住所 : 広島県福山市沼隈町大字常石1944-4<br>
+    休業日: 土曜　日曜　祝日<br>
+    開所時間: AM 8:30～PM17:30
+  </p>
+</section>
+
+<footer>
+  © 小玉海事代理士事務所
+</footer>
+
+<script>
+const targets = document.querySelectorAll(".fade");
+
+function fadeIn() {
+  targets.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", fadeIn);
+fadeIn();
+</script>
+
+</body>
+</html>
