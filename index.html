@@ -28,8 +28,33 @@ header {
   letter-spacing: 0.1em;
 }
 
+    
+ .logo img {
+  height: 110px;          /* ロゴの基準サイズ */
+  width: auto;
+  display: block;
+}
+    
+ 
+   .header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* ロゴと文字の間隔 */
+}
+
+.site-title {
+  margin: 0;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}    
+    
+    
+    
 .header-inner {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: auto;
   padding: 20px;
   display: flex;
@@ -198,7 +223,19 @@ footer {
 
 <header>
   <div class="header-inner">
+      
+  <div class="header-left">  
+      
+    <div class="logo">
+                <a href="index.html">
+         <img src="image/logo.png">
+        </a>
+      </div>
+      
     <h1 style="color:white;">小玉海事代理士事務所</h1>
+        </div>
+      
+      
     <nav>
       <a href="#home">ホーム</a>
       <a href="#profile">事務所概要</a>
@@ -402,5 +439,7 @@ fadeIn();
 
 </body>
 </html>
+
+
 
 
