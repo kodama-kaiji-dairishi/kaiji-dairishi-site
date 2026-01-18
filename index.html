@@ -295,7 +295,25 @@ footer {
     letter-spacing: 0.05em;
   }
 }
- 
+ @media (max-width: 768px) and (orientation: landscape) {
+
+  nav {
+    display: flex;
+    flex-direction: row;   /* ← 縦を完全禁止 */
+    flex-wrap: nowrap;     /* ← 折り返し禁止 */
+    align-items: center;
+    gap: 16px;
+  }
+
+  nav a {
+    white-space: nowrap;   /* 文字の縦化防止 */
+    font-size: 14px;
+  }
+
+  .header-inner {
+    flex-direction: row;   /* ヘッダーも横並びに戻す */
+    align-items: center;
+  }
 
  
 
@@ -522,6 +540,7 @@ fadeIn();
 
 </body>
 </html>
+
 
 
 
