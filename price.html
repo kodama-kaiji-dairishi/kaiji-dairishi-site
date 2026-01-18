@@ -315,7 +315,33 @@ footer {
   }
 
 
+@media (max-width: 768px) and (orientation: landscape) {
 
+  /* ヘッダー全体を画面幅ぴったりに */
+  .header-inner {
+    max-width: 100%;
+    padding: 8px 12px;
+  }
+
+  /* 左側（ロゴ＋事務所名）が広がりすぎないよう制限 */
+  .header-left {
+    flex-shrink: 0;
+    max-width: 55%;
+  }
+
+  /* ナビを確実に画面内に収める */
+  nav {
+    flex: 1;                    /* 残り幅を使う */
+    justify-content: flex-end;
+    overflow: hidden;           /* はみ出し防止 */
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
 
 
 
@@ -468,6 +494,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
