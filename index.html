@@ -334,9 +334,48 @@ footer {
   }
 }
 
+@media (max-width: 768px) and (orientation: portrait) {
+
+  /* 特徴・強み 全体 */
+  .strengths,
+  .strengths *,
+  .features,
+  .features * {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed;
+  }
+
+  /* 特徴・強みのレイアウトを強制リセット */
+  .strengths,
+  .features {
+    display: block !important;
+  }
+
+  /* カード・項目単位 */
+  .strengths-item,
+  .feature-item {
+    display: block !important;
+    margin-bottom: 20px;
+  }
+
+  /* 見出し */
+  .strengths h3,
+  .features h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  /* 本文 */
+  .strengths p,
+  .features p {
+    font-size: 15px;
+    line-height: 1.8;
+    word-break: normal;
+  }
+}
 
 
-
+ 
  
 
 </style>
@@ -562,6 +601,7 @@ fadeIn();
 
 </body>
 </html>
+
 
 
 
