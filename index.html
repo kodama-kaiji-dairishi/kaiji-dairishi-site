@@ -225,9 +225,19 @@ footer {
   }
 
   nav {
-    gap: 16px;
+    display: flex;
+    flex-direction: row;     /* ← 縦を強制解除 */
+    flex-wrap: nowrap;       /* ← 折り返し禁止 */
+    gap: 12px;               /* 間隔を詰める */
   }
+
+  nav a {
+    font-size: 14px;         /* 文字を小さく */
+    white-space: nowrap;     /* 改行させない */
+  }
+
 }
+
 
 </style>
 </head>
@@ -452,6 +462,7 @@ fadeIn();
 
 </body>
 </html>
+
 
 
 
