@@ -343,7 +343,48 @@ footer {
   }
 }
 
+@media (max-width: 768px) and (orientation: landscape) {
 
+  /* ヘッダー横幅を正しく分配 */
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* 左：ロゴ＋事務所名 */
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 45%;          /* ← ここが最重要 */
+    overflow: hidden;
+  }
+
+  .site-title {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* ← はみ出したら … */
+  }
+
+  /* 右：ナビ */
+  nav {
+    flex: 1;                 /* 残り幅だけ使う */
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    overflow: hidden;
+  }
+
+  nav a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
+
+
+  
 
 
   
@@ -494,6 +535,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
