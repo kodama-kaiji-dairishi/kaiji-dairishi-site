@@ -203,92 +203,29 @@ footer {
 }
 
 /* ===== スマホ ===== */
-/* ===== スマホのみ ヘッダー調整 ===== */
-@media (max-width: 768px) {
-
-  .header-inner {
-    padding: 8px 12px;
-  }
-
-  .logo img {
-    height: 38px;   /* ロゴ縮小 */
-  }
-
-  .site-title {
-    font-size: 14px;     /* 文字を小さく */
-    letter-spacing: 0.05em;
-    white-space: nowrap; /* 強制1行 */
-  }
-
-  .header-left {
-    gap: 10px;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;     /* ← 縦を強制解除 */
-    flex-wrap: nowrap;       /* ← 折り返し禁止 */
-    gap: 12px;               /* 間隔を詰める */
-  }
-
-  nav a {
-    font-size: 14px;         /* 文字を小さく */
-    white-space: nowrap;     /* 改行させない */
-  }
-
-}
-
 @media (max-width: 768px) and (orientation: portrait) {
 
-  /* ヘッダーを2段構成にする */
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  /* ロゴ＋事務所名は左寄せのまま */
-  .header-left {
-    width: 100%;
-  }
-
-  /* ナビを下段に */
-  nav {
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;   /* ← 折り返しOK */
-    gap: 14px;
-  }
-
-  nav a {
-    font-size: 14px;
-    white-space: nowrap;
-  }
-
-@media (max-width: 768px) and (orientation: portrait) {
-
-  /* ===== 本文が縦になる事故を完全防止 ===== */
+  /* 本文が縦になるのを完全防止 */
   body,
   main,
   section,
-  .container {
-    display: block;
+  .section {
     writing-mode: horizontal-tb;
+    display: block;
   }
 
-  /* ===== ヘッダー余白を縮小 ===== */
+  /* ヘッダー */
   header {
     padding: 0;
   }
 
   .header-inner {
-    flex-direction: column;      /* ヘッダーのみ2段構成 */
+    flex-direction: column;
     align-items: flex-start;
     padding: 10px 12px;
     gap: 6px;
   }
 
-  /* ===== ロゴと事務所名 ===== */
   .header-left {
     width: 100%;
     gap: 10px;
@@ -304,12 +241,12 @@ footer {
     white-space: nowrap;
   }
 
-  /* ===== ナビゲーション ===== */
+  /* ナビ */
   nav {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;      /* 横に収まらなければ折り返す */
+    flex-wrap: wrap;
     gap: 14px;
   }
 
@@ -318,59 +255,37 @@ footer {
     white-space: nowrap;
   }
 
-  /* ===== ボディ（本文）余白と文字 ===== */
-  section {
+  /* セクション余白 */
+  .section {
     padding: 24px 16px;
   }
 
-  h2 {
+  /* ===== 特徴・強み（row） ===== */
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .row.reverse {
+    flex-direction: column;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .text h2 {
     font-size: 20px;
-    margin-bottom: 12px;
   }
 
-  p {
+  .text p {
     font-size: 15px;
     line-height: 1.8;
   }
-}
 
-@media (max-width: 768px) and (orientation: portrait) {
-
-  /* 特徴・強み 全体 */
-  .strengths,
-  .strengths *,
-  .features,
-  .features * {
-    writing-mode: horizontal-tb !important;
-    text-orientation: mixed;
-  }
-
-  /* 特徴・強みのレイアウトを強制リセット */
-  .strengths,
-  .features {
-    display: block !important;
-  }
-
-  /* カード・項目単位 */
-  .strengths-item,
-  .feature-item {
-    display: block !important;
-    margin-bottom: 20px;
-  }
-
-  /* 見出し */
-  .strengths h3,
-  .features h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  /* 本文 */
-  .strengths p,
-  .features p {
-    font-size: 15px;
-    line-height: 1.8;
-    word-break: normal;
+  .photo {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -601,6 +516,7 @@ fadeIn();
 
 </body>
 </html>
+
 
 
 
