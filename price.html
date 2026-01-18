@@ -208,11 +208,101 @@ footer {
 }
 
 /* ===== スマホ ===== */
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
+
+  /* 本文が縦になるのを完全防止 */
+  body,
+  main,
+  section,
+  .section {
+    writing-mode: horizontal-tb;
+    display: block;
+  }
+
+  /* ヘッダー */
+  header {
+    padding: 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .header-left {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .logo img {
+    height: 36px;
+  }
+
+  .site-title {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  /* ナビ */
   nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  /* セクション余白 */
+  .section {
+    padding: 24px 16px;
+  }
+
+  /* ===== 特徴・強み（row） ===== */
+  .row {
+    flex-direction: column;
     gap: 20px;
   }
+
+  .row.reverse {
+    flex-direction: column;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .text h2 {
+    font-size: 20px;
+  }
+
+  .text p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .photo {
+    width: 100%;
+    height: auto;
+  }
 }
+
+
+
+
+
+
+
+
+
+  
 </style>
 </head>
 
@@ -230,7 +320,7 @@ footer {
         </a>
       </div>
       
-    <h1 style="color:white;">小玉海事代理士事務所</h1>
+     <h1 class="site-title">小玉海事代理士事務所</h1>
         </div>
       
       
@@ -360,6 +450,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
