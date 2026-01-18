@@ -203,21 +203,32 @@ footer {
 }
 
 /* ===== スマホ ===== */
+/* ===== スマホのみ ヘッダー調整 ===== */
 @media (max-width: 768px) {
+
+  .header-inner {
+    padding: 8px 12px;
+  }
+
+  .logo img {
+    height: 38px;   /* ロゴ縮小 */
+  }
+
+  .site-title {
+    font-size: 14px;     /* 文字を小さく */
+    letter-spacing: 0.05em;
+    white-space: nowrap; /* 強制1行 */
+  }
+
+  .header-left {
+    gap: 10px;
+  }
+
   nav {
-    gap: 20px;
-  
-}
-
-  .row,
-  .row.reverse {
-    flex-direction: column;
-  }
-
-  .photo {
-    height: auto;
+    gap: 16px;
   }
 }
+
 </style>
 </head>
 
@@ -234,7 +245,7 @@ footer {
         </a>
       </div>
       
-    <h1 style="color:white;">小玉海事代理士事務所</h1>
+   <h1 class="site-title">小玉海事代理士事務所</h1>
         </div>
       
       
@@ -441,10 +452,6 @@ fadeIn();
 
 </body>
 </html>
-
-
-
-
 
 
 
