@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="uco3rf8gzDwKzdjZzrccvX4Fhs4LdmHiSDs88_ct02w" />
+<meta name="robots" content="noindex">
+<title>お問い合わせ | 小玉海事代理士事務所</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="tEBaMymLGJJ7sLe_S4c2Z11cYJthUtpRj5hVLJiEyWA" />
+
+<style>
+/* ===== 全体のベース ===== */
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: #1f2933;
+  background: #f5f7fa;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  background: #0b2c44;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 110px;
+  width: auto;
+  display: block;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.site-title {
+  margin: 0;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 42px;
+}
+
+nav a {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #4fc3f7;
+  transition: width 0.3s;
+}
+
+nav a:hover {
+  color: #4fc3f7;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: #4fc3f7;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+/* ===== ヒーロー（小さい版） ===== */
+.page-hero {
+  background:
+    linear-gradient(rgba(11,44,68,0.7), rgba(11,44,68,0.7)),
+    url("image/toiawase.jpg") center / cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 170px 20px;
+}
+
+.page-hero h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.page-hero p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ===== メインコンテンツ ===== */
+.section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section h3 {
+  font-size: 28px;
+  border-left: 6px solid #0b2c44;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+/* ===== フォーム ===== */
+.form-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 44px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border-top: 5px solid #c99f3b;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  color: #0b2c44;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.form-group label .required {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #fafbfc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #c99f3b;
+  box-shadow: 0 0 0 3px rgba(201, 159, 59, 0.15);
+  outline: none;
+  background: #fff;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #e74c3c;
+  background: #fff5f5;
+}
+
+.form-group .error-message {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 4px;
+  display: none;
+}
+
+.form-group .error-message.show {
+  display: block;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* ===== 送信ボタン ===== */
+.submit-area {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  background: #c99f3b;
+  color: #fff;
+  padding: 14px 60px;
+  border: none;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s, opacity 0.3s;
+  letter-spacing: 0.05em;
+}
+
+.submit-btn:hover {
+  background: #b0882e;
+}
+
+.submit-btn:active {
+  transform: scale(0.97);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== ステータスメッセージ ===== */
+.status-message {
+  margin-top: 20px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+  display: none;
+}
+
+.status-message.success {
+  display: block;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+  display: block;
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.status-message.loading {
+  display: block;
+  background: #e2e8f0;
+  color: #2d3748;
+  border: 1px solid #cbd5e0;
+}
+
+/* ===== お問い合わせ（index.htmlと同じデザイン） ===== */
+.contact-box {
+  background: #0b2c44;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+/* ===== フッター（index.htmlと同じデザイン） ===== */
+footer {
+  background: #0b2c44;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* ===== フェードイン ===== */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== スマホ対応 ===== */
+@media (max-width: 768px) and (orientation: portrait) {
+  body, main, section, .section {
+    writing-mode: horizontal-tb;
+    display: block;
+  }
+
+  header { padding: 0; }
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 12px;
+    gap: 6px;
+  }
+  .header-left { width: 100%; gap: 10px; }
+  .logo img { height: 36px; }
+  .site-title { font-size: 14px; letter-spacing: 0.05em; white-space: nowrap; }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  nav a { font-size: 14px; white-space: nowrap; }
+
+  .section { padding: 20px 16px; margin: 30px auto; }
+  .form-container { padding: 24px 20px; }
+  .page-hero { padding: 40px 20px; }
+  .page-hero h2 { font-size: 24px; }
+
+  .submit-btn { padding: 12px 40px; font-size: 16px; width: 100%; }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 16px;
+  }
+  nav a { white-space: nowrap; font-size: 14px; }
+  .header-inner { flex-direction: row; align-items: center; max-width: 100%; padding: 8px 12px; }
+  .header-left { flex-shrink: 0; max-width: 55%; }
+  nav { flex: 1; justify-content: flex-end; overflow: hidden; gap: 14px; }
+  nav a { font-size: 14px; white-space: nowrap; }
+
+  .header-left { display: flex; align-items: center; gap: 8px; max-width: 45%; overflow: hidden; }
+  .site-title { font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  nav { flex: 1; display: flex; justify-content: flex-end; gap: 12px; overflow: hidden; }
+  nav a { font-size: 14px; white-space: nowrap; }
+}
+
+@media (max-width: 600px) {
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="logo">
+        <a href="index.html">
+          <img src="image/logo.png" alt="小玉海事代理士事務所">
+        </a>
+      </div>
+      <h1 class="site-title">小玉海事代理士事務所</h1>
+    </div>
+    <nav>
+      <a href="index.html">ホーム</a>
+      <a href="index.html#profile">事務所概要</a>
+      <a href="index.html#service">業務内容</a>
+      <a href="price.html">報酬表</a>
+      <a href="contact.html" class="active">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== ヒーロー（小） ===== -->
+<section class="page-hero">
+  <h2>お問い合わせ</h2>
+  <p>まずはお気軽にご連絡ください</p>
+</section>
+
+<!-- ===== フォーム ===== -->
+<section class="section fade" id="contact">
+  <h3>フォームからのお問い合わせ</h3>
+
+  <div class="form-container">
+    <form id="contactForm" novalidate>
+      <!-- GASのWebアプリURL（あなたのものに置き換えてください） -->
+      <input type="hidden" id="formUrl" value="https://script.google.com/macros/s/AKfycbyuwnyxR9e-stMC9T0WtYIj_C6Yl37hSo2Saq-QQhdeywcxGXXSKqTy6xCCrhZWyqcX1w/exec">
+
+      <div class="form-group">
+        <label for="name">お名前 <span class="required">*</span></label>
+        <input type="text" id="name" placeholder="例：山田 太郎" required>
+        <div class="error-message" id="nameError">お名前を入力してください</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">メールアドレス <span class="required">*</span></label>
+        <input type="email" id="email" placeholder="例：example@mail.com" required>
+        <div class="error-message" id="emailError">正しいメールアドレスを入力してください</div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">件名</label>
+        <input type="text" id="subject" placeholder="お問い合わせの件名（任意）">
+      </div>
+
+      <div class="form-group">
+        <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+        <textarea id="message" placeholder="ご質問・ご相談内容を具体的にお書きください" required></textarea>
+        <div class="error-message" id="messageError">内容を入力してください</div>
+      </div>
+
+      <div class="submit-area">
+        <button type="submit" class="submit-btn" id="submitBtn">送信する</button>
+      </div>
+
+      <div class="status-message" id="statusMessage"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== お問い合わせ（index.htmlと同じ） ===== -->
+<section class="contact-box fade" id="contact-info">
+  <h3>お問い合わせ</h3>
+  <p>
+    メール：kodama-yuichi@outlook.com<br>
+    電話：090-2081-0267<br>
+    住所 : 広島県福山市沼隈町大字常石1994-4<br>
+    休業日: 土曜 日曜 祝日<br>
+    開所時間: AM 8:30～PM17:30
+  </p>
+</section>
+
+<!-- ===== フッター（index.htmlと同じ） ===== -->
+<footer>
+  © 小玉海事代理士事務所
+</footer>
+
+<!-- ===== JavaScript ===== -->
+<script>
+// ===== フェードイン処理 =====
+document.addEventListener('DOMContentLoaded', function() {
+  const targets = document.querySelectorAll('.fade');
+
+  function fadeIn() {
+    targets.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', fadeIn);
+  fadeIn();
+});
+
+// ===== お問い合わせフォーム送信処理 =====
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const statusMessage = document.getElementById('statusMessage');
+
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const subjectInput = document.getElementById('subject');
+  const messageInput = document.getElementById('message');
+
+  const nameError = document.getElementById('nameError');
+  const emailError = document.getElementById('emailError');
+  const messageError = document.getElementById('messageError');
+
+  const formUrl = document.getElementById('formUrl').value;
+
+  // バリデーション関数
+  function validateField(input, errorEl, condition) {
+    if (!condition) {
+      input.classList.add('error');
+      errorEl.classList.add('show');
+      return false;
+    } else {
+      input.classList.remove('error');
+      errorEl.classList.remove('show');
+      return true;
+    }
+  }
+
+  function validateForm() {
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    const isNameValid = validateField(nameInput, nameError, name.length > 0);
+    const isEmailValid = validateField(emailInput, emailError, email.length > 0 && email.includes('@'));
+    const isMessageValid = validateField(messageInput, messageError, message.length > 0);
+
+    return isNameValid && isEmailValid && isMessageValid;
+  }
+
+  // リアルタイムバリデーション
+  nameInput.addEventListener('blur', function() {
+    validateField(this, nameError, this.value.trim().length > 0);
+  });
+
+  emailInput.addEventListener('blur', function() {
+    const value = this.value.trim();
+    validateField(this, emailError, value.length > 0 && value.includes('@'));
+  });
+
+  messageInput.addEventListener('blur', function() {
+    validateField(this, messageError, this.value.trim().length > 0);
+  });
+
+  // フォーム送信
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // 最終バリデーション
+    if (!validateForm()) {
+      statusMessage.className = 'status-message error';
+      statusMessage.textContent = '※ 入力エラーがあります。赤く表示された項目を修正してください。';
+      return;
+    }
+
+    // 送信処理開始
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中...';
+    statusMessage.className = 'status-message loading';
+    statusMessage.textContent = '⏳ 送信中...少々お待ちください。';
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const subject = subjectInput.value.trim() || 'お問い合わせ';
+    const message = messageInput.value.trim();
+
+    // データをURLエンコード
+    const params = new URLSearchParams();
+    params.append('name', name);
+    params.append('email', email);
+    params.append('subject', subject);
+    params.append('message', message);
+
+    // GASにPOST送信
+    fetch(formUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: params.toString()
+    })
+    .then(response => response.text())
+    .then(result => {
+      if (result === 'success') {
+        statusMessage.className = 'status-message success';
+        statusMessage.textContent = '✅ 送信完了しました！ ご連絡ありがとうございます。担当者より改めてご連絡いたします。';
+        form.reset();
+        // エラー表示をリセット
+        document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+        document.querySelectorAll('.error-message.show').forEach(el => el.classList.remove('show'));
+      } else {
+        statusMessage.className = 'status-message error';
+        statusMessage.textContent = '❌ 送信に失敗しました。時間をおいて再度お試しいただくか、直接メールにてご連絡ください。';
+        console.error('Server response:', result);
+      }
+    })
+    .catch(error => {
+      statusMessage.className = 'status-message error';
+      statusMessage.textContent = '❌ 通信エラーが発生しました。インターネット接続を確認の上、再度お試しください。';
+      console.error('Fetch error:', error);
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = '送信する';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
