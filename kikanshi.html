@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>海事補佐人のご紹介 | 小玉海事代理士事務所</title>
+<style>
+/* ===== 既存サイトと同じスタイルを継承 ===== */
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: #1f2933;
+  background: #f5f7fa;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  background: #0b2c44;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: 110px;
+  width: auto;
+  display: block;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.site-title {
+  margin: 0;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 42px;
+}
+
+nav a {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #4fc3f7;
+  transition: width 0.3s;
+}
+
+nav a:hover {
+  color: #4fc3f7;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== ページタイトル ===== */
+.page-header {
+  background: linear-gradient(rgba(11,44,68,0.85), rgba(11,44,68,0.85)), url("image/head.jpg") center / cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.page-header h1 {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.page-header p {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+/* ===== 共通 ===== */
+.section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section h2 {
+  font-size: 28px;
+  border-left: 6px solid #0b2c44;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+/* ===== 資格カード（詳細版） ===== */
+.qual-detail {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 44px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border-left: 6px solid #0b2c44;
+}
+
+.qual-detail.gold {
+  border-left-color: #c99f3b;
+}
+
+.qual-detail.blue {
+  border-left-color: #4a90b0;
+}
+
+.qual-detail .qual-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.qual-detail .qual-icon {
+  font-size: 40px;
+}
+
+.qual-detail .qual-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0b2c44;
+  margin: 0;
+}
+
+.qual-detail .qual-sub {
+  font-size: 15px;
+  color: #6a7f94;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+.qual-detail .qual-body {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #2c4058;
+}
+
+.qual-detail .qual-body strong {
+  color: #0b2c44;
+}
+
+.qual-detail .qual-body .highlight {
+  background: #eef4fa;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #c99f3b;
+  margin: 16px 0;
+}
+
+.qual-detail .qual-body .highlight-gold {
+  background: #fefcf5;
+  border-left-color: #c99f3b;
+}
+
+/* ===== 役割比較表 ===== */
+.comparison-table {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 36px;
+  margin: 30px 0;
+  border: 1px solid #e6ecf3;
+  overflow-x: auto;
+}
+
+.comparison-table h4 {
+  margin: 0 0 16px 0;
+  color: #0b2c44;
+  font-size: 18px;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.comparison-table th {
+  background: #0b2c44;
+  color: #fff;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.comparison-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: #f8faff;
+}
+
+.comparison-table .highlight-row td {
+  font-weight: 700;
+  color: #8a6d2b;
+}
+
+/* ===== お問い合わせ ===== */
+.contact-box {
+  background: #0b2c44;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+/* ===== フッター ===== */
+footer {
+  background: #0b2c44;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+/* ===== パンくずリスト ===== */
+.breadcrumb {
+  max-width: 1100px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #6a7f94;
+}
+
+.breadcrumb a {
+  color: #0b2c44;
+  text-decoration: underline;
+}
+
+/* ===== スマホ ===== */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 12px;
+    gap: 6px;
+  }
+  .header-left { width: 100%; gap: 10px; }
+  .logo img { height: 36px; }
+  .site-title { font-size: 14px; letter-spacing: 0.05em; white-space: nowrap; }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  nav a { font-size: 14px; white-space: nowrap; }
+
+  .page-header { padding: 50px 16px 40px; }
+  .page-header h1 { font-size: 26px; }
+
+  .qual-detail { padding: 24px 20px; }
+  .qual-detail .qual-name { font-size: 20px; }
+  .qual-detail .qual-icon { font-size: 30px; }
+
+  .comparison-table { padding: 16px; }
+  .comparison-table table { font-size: 13px; }
+  .comparison-table th,
+  .comparison-table td { padding: 6px 10px; }
+}
+
+@media (max-width: 480px) {
+  .qual-detail .qual-header { flex-wrap: wrap; }
+  .qual-detail .qual-sub { display: block; margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== ヘッダー ===== -->
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="logo">
+        <a href="index.html">
+          <img src="image/logo.png" alt="小玉海事代理士事務所">
+        </a>
+      </div>
+      <h1 class="site-title">小玉海事代理士事務所</h1>
+    </div>
+    <nav>
+      <a href="index.html#home">ホーム</a>
+      <a href="index.html#profile">事務所概要</a>
+      <a href="index.html#service">業務内容</a>
+      <a href="price.html">報酬表</a>
+      <a href="https://ameblo.jp/ponkotunsr250/entry-12964719929.html" target="_blank" rel="noopener noreferrer">ブログ</a>
+      <a href="index.html#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== ページタイトル ===== -->
+<div class="page-header">
+  <h1>一級海技士(機関)</h1>
+  <p>海のエンジニア</p>
+</div>
+
+<!-- ===== パンくずリスト ===== -->
+<div class="breadcrumb">
+  <a href="index.html">ホーム</a> ＞ 一級海技士(機関)
+</div>
+
+<!-- ===== 資格紹介 ===== -->
+<section class="section">
+
+   <!-- ============================================================ -->
+  <!-- 3. 一級海技士（機関） -->
+  <!-- ============================================================ -->
+  <div class="qual-detail">
+    <div class="qual-header">
+      <span class="qual-icon">🚢</span>
+      <div>
+        <h3 class="qual-name">一級海技士（機関） <span class="qual-sub">国家資格（国土交通省）</span></h3>
+      </div>
+    </div>
+    <div class="qual-body">
+      <p>
+        <strong>一級海技士（機関）</strong>は、大型船の機関（主機・発電機・補機類など）の運転・管理・保守を担当する<strong>国家資格</strong>です。
+        船舶の安全運航に直結する高度な専門知識と技術が求められます。
+      </p>
+      <div class="highlight">
+        <strong>一級海技士（機関）の知見を活かした強み：</strong><br>
+        • 船舶機関の構造・性能を深く理解した実務的アドバイス<br>
+        • 検査申請時の機関関連書類の正確な作成・対応<br>
+        • 船舶管理業務での現場経験に基づく実践的サポート<br>
+        • 機関トラブル時の原因究明と対策提案
+      </div>
+      <p style="margin-top:12px;">
+        当事務所代表は、長年の乗船経験で培った<strong>機関の現場知識</strong>を活かし、書類手続きだけでなく<strong>実務に即した現実的なアドバイス</strong>を提供いたします。
+      </p>
+    </div>
+  </div>
+
+
+ 
+</section>
+
+<!-- ===== お問い合わせ ===== -->
+ <section class="contact-box fade" id="contact">
+  <h3>お問い合わせ</h3>
+  <p>
+    メール：kodama-yuichi@outlook.com<br>
+    電話：090-2081-0267<br>
+    住所 : 福岡県北九州市門司区高田1丁目19-22<br>
+      休業日: 土曜　日曜　祝日<br>
+    開所時間: AM 8:30～PM17:30
+  </p>
+</section> 
+
+<footer>
+  © 小玉海事代理士事務所
+</footer>
+
+</body>
+</html>
